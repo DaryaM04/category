@@ -1,0 +1,667 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@property --rad-1-size
+{
+  syntax: "<length-percentage>";
+  initial-value: 100%;
+  inherits: false;
+}
+
+@property --rad-1-pos-x 
+{
+  syntax: "<length-percentage>";
+  initial-value: 100%;
+  inherits: false;
+}
+
+@property --rad-1-pos-y 
+{
+  syntax: "<length-percentage>";
+  initial-value: 100%;
+  inherits: false;
+}
+
+@property --rad-2-size
+{
+  syntax: "<length-percentage>";
+  initial-value: 100%;
+  inherits: false;
+}
+
+@property --rad-2-pos-x
+{
+  syntax: "<length-percentage>";
+  initial-value: 100%;
+  inherits: false;
+}
+
+@property --rad-2-pos-y
+{
+  syntax: "<length-percentage>";
+  initial-value: 100%;
+  inherits: false;
+}
+
+@property --rad-3-size
+{
+    syntax: "<length-percentage>";
+    initial-value: 100%;
+    inherits: false;
+}
+
+@property --rad-3-pos-x
+{
+  syntax: "<length-percentage>";
+  initial-value: 100%;
+  inherits: false;
+}
+
+@property --rad-3-pos-y
+{
+  syntax: "<length-percentage>";
+  initial-value: 100%;
+  inherits: false;
+}
+
+body{
+    max-width: 1920px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    overflow: auto;
+}
+
+main{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.container_contant{
+    width: 83.33%;
+    margin-top: 153px;
+    margin-bottom: 152px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+    position: relative;
+    z-index: 10;
+}
+
+.header{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    justify-content: start;
+}
+
+h1{
+    font-family: Impact, sans-serif;
+    font-size: 40px;
+    font-weight: 400;
+    line-height: 48.79px;
+    text-align: left;
+}
+
+.border_bottom{
+    height: 4px;
+    width: 88px;
+    border-radius: 99px;
+    background: #FFCC01;
+
+}
+
+.cards_container{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 32px;
+}
+
+.item_container{
+    width: 376px;
+    height: 188px;
+     border: 2px solid #79C800;
+     border-radius: 16px;
+     display: flex;
+     flex-direction: column;
+     gap: 8px;
+     box-shadow: 0px 4px 16px 0px #00000040;
+     backdrop-filter: blur(5px);
+
+     --radgradient-start-1: 10%;
+
+     background-color: (255, 255, 255, 0.2);
+     -webkit-backdrop-filter: blur(5px);
+
+     background-repeat: no-repeat;
+
+     transition-property: 
+     --rad-1-size,
+     --rad-1-pos-x,
+     --rad-1-pos-y,
+     --rad-2-size,
+     --rad-2-pos-x,
+     --rad-2-pos-y,
+     --rad-3-size,
+     --rad-3-pos-x,
+     --rad-3-pos-y;
+
+     transition-duration: .3s;   
+
+     background-image: 
+     radial-gradient(circle at var(--rad-1-pos-x) var(--rad-1-pos-y), rgba(255, 255, 255, 0.2) var(--rad-1-size), transparent var(--rad-1-size)),
+     radial-gradient(circle at var(--rad-2-pos-x) var(--rad-2-pos-y), rgba(255, 255, 255, 0.2) var(--rad-2-size), transparent var(--rad-2-size)),
+     radial-gradient(circle at var(--rad-3-pos-x) var(--rad-3-pos-y), rgba(255, 255, 255, 0.2) var(--rad-3-size), transparent var(--rad-3-size));
+
+ 
+}
+
+/** Создаём классы для активации */
+.card_active_bgc
+{
+    /* background: linear-gradient(0deg, rgba(121, 200, 0, 0.4), rgba(121, 200, 0, 0.4)),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0) 100%); */
+    background-color: rgba(121, 200, 0, 0.4);
+}
+
+/** Создаём 4 разных класса для активации разных вариантов анимации кругов */
+.card_active_animation_0{
+  --rad-1-size: 30%;
+  --rad-1-pos-x: 20%;
+  --rad-1-pos-y: 90%;
+  --rad-2-size: 5%;
+  --rad-2-pos-x: 40%;
+  --rad-2-pos-y: 70%;
+  --rad-3-size: 10%;
+  --rad-3-pos-x: 10%;
+  --rad-3-pos-y: 10%;
+}
+
+.card_active_animation_{
+  --rad-1-size: 10%;
+  --rad-1-pos-x: 10%;
+  --rad-1-pos-y: 10%;
+  --rad-2-size: 20%;
+  --rad-2-pos-x: 50%;
+  --rad-2-pos-y: 10%;
+  --rad-3-size: 30%;
+  --rad-3-pos-x: 90%;
+  --rad-3-pos-y: 90%;
+}
+
+.card_active_animation_2{
+  --rad-1-size: 15%;
+  --rad-1-pos-x: 55%;
+  --rad-1-pos-y: 55%;
+  --rad-2-size: 10%;
+  --rad-2-pos-x: 45%;
+  --rad-2-pos-y: 65%;
+  --rad-3-size: 20%;
+  --rad-3-pos-x: 30%;
+  --rad-3-pos-y: 30%;
+}
+
+.card_active_animation_3{
+  --rad-1-size: 10%;
+  --rad-1-pos-x: 30%;
+  --rad-1-pos-y: 15%;
+  --rad-2-size: 15%;
+  --rad-2-pos-x: 75%;
+  --rad-2-pos-y: 50%;
+  --rad-3-size: 30%;
+  --rad-3-pos-x: 80%;
+  --rad-3-pos-y: 80%;
+}
+
+h3{
+    font-family: 'Raleway', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 28.18px;
+    letter-spacing: -1px;
+    text-align: left;
+    margin-left: 16px;
+    margin-bottom: 16px;
+    z-index: 10;
+}
+
+.item{
+    width: 100%;
+    display: flex;
+    
+    justify-content: end;
+    align-items: end;
+    text-align: end;
+    right: 0px;
+}
+
+.card_image{
+    width: 65.96%;
+    height: 138px;
+    position: relative;
+    z-index: 11;
+}
+
+
+.text_item{
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 160px;
+    z-index: 11;
+    margin-bottom: 17px;
+    position: absolute;
+    margin-top: 115px;
+}
+
+
+/* анимация */
+
+.item_container:hover{
+    cursor: pointer;
+}
+
+.card_head_active{
+    font-size: 24px;
+    line-height: 32.87px;
+}
+
+.pesticidi_image{
+    background-image: url(img/пестициды.svg);
+}
+
+.cultura_image{
+    background-image: url(img/культуры.svg);
+}
+
+.vrediteli_image{
+    background-image: url(img/вредители.svg);
+}
+
+.veschestva_image{
+    background-image: url(img/действующиеВещества.svg);
+}
+
+
+.pesticidi_image_active{
+    background-image: url(img/пестициды-2.svg);
+}
+
+.cultura_image_active{
+    background-image: url(img/культуры-2.svg);
+}
+
+.vrediteli_image_active{
+    background-image: url(img/вредители-2.svg);
+}
+
+.veschestva_image_image_active{
+    background-image: url(img/действующиеВещества2.svg);
+}
+
+.containerGreen{
+    width: 198.98px;
+    height: 146.47px;
+    top: 50px;
+    left: 0px;
+    padding: 0px 0.03px 0.08px 0.02px;
+    position: absolute;
+    z-index: 9;
+    animation: greenList 9s ease infinite;;
+}
+
+.containerGrey,
+.containerBrown,
+.containerYellow,
+.containerBrownList{
+    position: absolute;
+    z-index: 9;
+}
+
+.containerGrey{
+    width: 120.9px;
+    height: 114.1px;
+    top: 508px;
+    left: -6px;
+    padding: 0px 0.03px 0px 0.09px;
+    position: absolute;
+    z-index: 9;
+}
+
+.containerBrown{
+    width: 116.3px;
+    height: 69px;
+    top: 97.93px;
+    left: 63.23%;
+    position: absolute;
+    z-index: 9;
+}
+
+.containerYellow{
+    width: 304px;
+    height: 385.64px;
+    right: 0px;
+    top: 11px;
+    padding: 0.08px 0px 0.04px 0px;
+    position: absolute;
+    z-index: 9;
+}
+
+.containerBrownList{
+    width: 101px;
+    height: 97px;
+    top: 435px;
+    left: 65.52%;
+    padding: 0px 0.02px 0px 0.02px;
+    position: absolute;
+    z-index: 9;
+    animation: brownList 9s ease infinite;;
+}
+
+
+/* анимация зеленого листика */
+
+@keyframes greenList{
+    0%{
+        left: 0px;
+        top: 50px;
+    }
+    10%{
+        left: -15px;
+        top: 43px;
+    }
+    20%{
+        left: -10px;
+    }
+    40%{
+        left: -5px;
+    }
+    60%{
+        left: 0px;
+    }
+    70%{
+        top: 40px;
+    }
+    80%{
+        top: 44px;
+    }
+    90%{
+        top: 48px;
+    }
+    100%{
+        left: 0px;
+        top: 50px;
+    }
+}
+
+/* анимация коричневого листика */
+
+@keyframes brownList{
+    0%{
+        top: 450px;
+        left: 66.00%;
+    }
+    10%{
+        top: 452px;
+        left: 66.00%;
+    }
+    20%{
+        top: 453px;
+        left: 66.00%;
+    }
+    40%{
+        top: 455px;
+        left: 66.00%;
+    }
+    60%{
+        top: 449px;
+        left: 65.52%;
+    }
+    70%{
+        top: 450px;
+        left: 66.52%;
+    }
+    80%{
+        left: 447px;
+        left: 66.52%;
+    }
+    90%{
+        top: 445px;
+        left: 65.52%;
+    }
+    100%{
+        top: 450px;
+        left: 66.52%;
+    }
+}
+
+/* медиа запрос на гирину менее 1800px */
+@media (max-width: 1800px){
+
+    .cards_container{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        gap: 32px;
+        flex-wrap: wrap;
+    }
+
+    .item{
+        justify-content: end;
+        align-items: center;
+        text-align: center;
+    } 
+
+    h3{
+        font-size: 22px;
+        line-height: 30.18px;
+    }
+
+    .containerYellow{
+    top: 200px;
+    }
+    
+    .containerBrownList{
+        width: 101px;
+        height: 97px;
+        top: 670px;
+        left: 70.52%;
+        padding: 0px 0.02px 0px 0.02px;
+        position: absolute;
+        z-index: 9;
+        animation: brownList2 9s ease infinite;
+    }
+
+
+/* анимация для коричневого листа на ширине менее 1800px */
+    @keyframes brownList2{
+        0%{
+            top: 670px;
+            left: 75.52%;
+        }
+        10%{
+            top: 675px;
+            left: 75.00%;
+        }
+        20%{
+            top: 674px;
+            left: 73.00%;
+        }
+        40%{
+            top: 680px;
+            left: 76.00%;
+        }
+        60%{
+            top: 674px;
+            left: 72.52%;
+        }
+        70%{
+            top: 695px;
+            left: 75.52%;
+        }
+        80%{
+            top: 672px;
+            left: 77.52%;
+        }
+        90%{
+            top: 671px;
+            left: 72.52%;
+        }
+        100%{
+            top: 670px;
+            left: 75.52%;
+        }
+    }
+
+    @keyframes circleOne{
+        0%{
+            top: 90.27px;
+            left: 150.54px;
+        }
+        100%{
+            top: 250.27px;
+            left: 250.54px;
+        }
+    }
+
+ }
+    
+ /* медиа запрос на ширину менее 800px */
+
+@media (max-width: 800px){
+    .cards_container{
+        width: 100%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+        gap: 32px;
+        flex-wrap: wrap;
+    }
+
+    .containerBrown{
+        width: 116.3px;
+    height: 69px;
+    top: 97.93px;
+    left: 63.23%;
+    position: absolute;
+    z-index: 9;
+    }
+    
+    .containerYellow{
+        width: 304px;
+    height: 385.64px;
+    right: 0px;
+    top: 700px;
+    padding: 0.08px 0px 0.04px 0px;
+    position: absolute;
+    z-index: 9;
+    }
+    
+    .containerBrownList{
+        width: 101px;
+        height: 97px;
+        top: 435px;
+        left: 70.52%;
+        padding: 0px 0.02px 0px 0.02px;
+        position: absolute;
+        z-index: 9;
+        animation: brownList3 9s ease infinite;;
+    }
+
+    /* анимация для коричневого листика на ширине менее 800px */
+    @keyframes brownList3{
+        0%{
+            top: 435px;
+            left: 75.52%;
+        }
+        10%{
+            top: 440px;
+            left: 75.00%;
+        }
+        20%{
+            top: 442px;
+            left: 77.00%;
+        }
+        40%{
+            top: 440px;
+            left: 79.00%;
+        }
+        60%{
+            top: 437px;
+            left: 77.52%;
+        }
+        70%{
+            top: 435px;
+            left: 79.52%;
+        }
+        80%{
+            left: 439px;
+            left: 79.52%;
+        }
+        90%{
+            top: 437px;
+            left: 79.52%;
+        }
+        100%{
+            top: 435px;
+            left: 78.52%;
+        }
+}
+}
+
+/* медиа запрос на ширину менее 400px */
+@media (max-width: 400px){
+
+    main{
+        justify-content: center;
+    }
+
+    .container_contant{
+        text-align: center;
+    }
+
+    .item_container{
+        width: 300px;
+        height: 188px;
+        border: 2px solid #79C800;
+        border-radius: 16px;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        background: #fff;
+        box-shadow: 0px 4px 16px 0px #00000040;
+        background: rgba(255, 255, 255, 0.3);
+        backdrop-filter: blur(5px);
+    }
+
+    .item{
+        width: 100%;
+        display: flex;
+        justify-content: end;
+    }
+    
+    .imgItem1, 
+    .imgItem2,
+    .imgItem3,
+    .imgItem4{
+        width: 85.96%;
+        height: 138px;
+        background-size: cover;
+    }
+
+    h3{
+        font-size: 18px;
+        line-height: 24.18px;
+    }
+}
